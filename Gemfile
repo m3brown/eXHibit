@@ -34,7 +34,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-
+group :development do
+  gem 'pry-rails'
+end
 
 group :development, :test do
 

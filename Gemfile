@@ -34,17 +34,22 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'devise'
+gem 'slim-rails'
+gem 'toastr_rails'
+gem 'simple_form'
+
 group :development do
   gem 'pry-rails'
 end
 
 group :development, :test do
 
+  gem 'shoulda-matchers', '~> 3.1'
   gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
   gem 'jasmine-rails'
-
   gem 'rubocop', '~> 0.38.0', require: false
 
 

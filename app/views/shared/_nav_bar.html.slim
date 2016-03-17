@@ -1,0 +1,30 @@
+nav.navbar.navbar-inverse.navbar-fixed-top
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand href="#" eXHibit
+    #navbar.navbar-collapse.collapse
+      ul.nav.navbar-nav
+        li.active
+          = link_to "Home", root_path
+        li
+          a href="#search" Search Streams
+        li
+          = link_to "About", about_path
+      - unless user_signed_in?
+        = simple_form_for(:user, as: :user, url: session_path(:user), html: { class: 'navbar-form navbar-right' } ) do |f|
+          .form-group
+            = f.email_field :email, autofocus: true, placeholder: 'Email', class: 'form-control'
+          .form-group
+            = f.password_field :password, placeholder: "Password", autocomplete: "off", class: 'form-control'
+          .form-group
+            = f.submit "Sign in", class: 'btn btn-success'
+            = link_to "Register", new_registration_path(:user), class: 'btn btn-danger', role: 'button'
+      - else
+        .navbar-form.navbar-right
+          = link_to "Sign out", destroy_user_session_path, :method => :delete, class: 'btn btn-danger'
+        p.navbar-text.navbar-right = current_user.email

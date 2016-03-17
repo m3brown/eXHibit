@@ -7,9 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<%= render 'toastr_rails/flash' %>
 <%= render 'shared/nav_bar' %>
-<%= yield %>
+
+<div class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>

@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   root 'dashboard#index'
 
   get 'about' => 'dashboard#about', as: :about
-  get 'search_streams' => 'dashboard#search', as: :search_stream_path
+  # get 'search_streams' => 'dashboard#search', as: :search_stream
+  get 'search' => 'search#index', as: :search
 
 
   devise_for :users

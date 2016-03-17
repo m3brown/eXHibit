@@ -39,6 +39,9 @@ gem 'slim-rails'
 gem 'toastr_rails'
 gem 'simple_form'
 
+# Our gems
+gem 'imdb_consume', path: 'vendor/gems/imdb_consume'
+
 group :development do
   gem 'pry-rails'
 end

@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   root 'dashboard#index'
 
   get 'about' => 'dashboard#about', as: :about
-  get 'search_streams' => 'dashboard#search', as: :search_stream_path
+  get 'search' => 'searches#search', as: :search
 
+  resources :searches
 
   devise_for :users
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)

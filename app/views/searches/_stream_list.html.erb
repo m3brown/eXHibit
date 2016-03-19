@@ -1,0 +1,23 @@
+<%-	 if @streams.present? %>
+    <div class="row">
+      <% @streams['Search'].each.with_index do |stream, i| %>
+          <div class="col-sm-3 col-lg-3 col-md-3">
+            <div class="thumbnail">
+              <% poster_image = stream['Poster']!='N/A' ? stream['Poster'] : 'https://placeholdit.imgix.net/~text?txtsize=44&txt=No%20Poster&w=265&h=380' %>
+              <image src="<%=	 poster_image %>" xlink:href="<%=	 poster_image %>"></image>
+              <div class="caption">
+                <h4>
+                  <%= stream['Title'] %>
+                </h4>
+                <p class="plot">
+                  <%=	 stream['Plot'] %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <% if (i+1)%4==0 %>
+            <div class="clearfix"></div>
+          <% end %>
+      <%end%>
+    </div>
+<% end %>

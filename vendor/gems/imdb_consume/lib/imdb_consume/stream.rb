@@ -3,7 +3,8 @@ module ImdbConsume
     class << self
 
       def find(id, options={})
-        response = Typhoeus.get("#{ImdbConsume.remote_domain}i=#{id}&y=&plot=#{options[:plot]}&r=json")
+        request = URI.encode("#{ImdbConsume.remote_domain}s=#{title}&y=&plot=#{options[:plot]}&r=json")
+        response = Typhoeus.get(request)
         if response.present?
           JSON.parse(response.body)
         else
@@ -12,11 +13,12 @@ module ImdbConsume
       end
 
       def search(title, options={})
-        response = Typhoeus.get("#{ImdbConsume.remote_domain}s=#{title}&y=&plot=#{options[:plot]}&r=json")
+        request = URI.encode("#{ImdbConsume.remote_domain}s=#{title}&y=&plot=#{options[:plot]}&r=json")
+        response = Typhoeus.get(request)
         if response.present?
           JSON.parse(response.body)
         else
-          nil
+          []
         end
       end
     end

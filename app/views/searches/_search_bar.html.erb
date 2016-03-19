@@ -1,0 +1,8 @@
+<%= simple_form_for(:search, url: search_path, method: :get) do |f| %>
+    <div class="input-group">
+      <%= f.input :title, label: false, placeholder: 'Search IMDB for...' %>
+      <span class="input-group-btn">
+        <%= f.submit "Go!", class: "btn btn-default" %>
+      </span>
+    </div>
+<% end %>

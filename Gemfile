@@ -56,6 +56,7 @@ group :development, :test do
   gem 'capybara'
   gem 'jasmine-rails'
   gem 'rubocop', '~> 0.38.0', require: false
+  gem 'rubocop-checkstyle_formatter', require: false
   gem 'minitest-spec-rails', '~> 5.2.0'
   gem 'minitest-reporters', '>= 0.5.0'
   gem 'minitest-rails', '~> 2.1.1'

@@ -46,6 +46,7 @@ group :development, :test do
   gem 'jasmine-rails'
 
   gem 'rubocop', '~> 0.38.0', require: false
+  gem 'rubocop-checkstyle_formatter', require: false
 
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

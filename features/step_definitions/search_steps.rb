@@ -1,5 +1,5 @@
 Given(/^I am on the search streams page$/) do
-  visit(new_search_path)
+  visit(searches_path)
 end
 
 When(/^I search for (.*)$/) do |search_text|
